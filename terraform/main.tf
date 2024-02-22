@@ -1,22 +1,9 @@
 
 module "custom-roles" {
-  source = "./modules/iam_roles"
-}
+  for_each = var.permissions
 
-### TEMPLATE ###
-
-# resource "google_project_iam_member" "team" {
-#   project = var.project_id
-#   role    = "roles/${module.custom-roles.team}"
-#   member  = "group:team@ubersuggest.com"
-#
-#   depends_on = [module.custom-roles]
-# }
-
-resource "google_project_iam_member" "dev-infra" {
-  project = var.project_id
-  role    = "roles/${module.custom-roles.dev-infra-role}"
-  member  = "group:devinfra-team@ubersuggest.com"
-
-  depends_on = [module.custom-roles]
+  source      = "./modules/iam_roles"
+  project_id  = var.project_id
+  team        = each.key
+  permissions = each.value
 }

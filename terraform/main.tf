@@ -1,6 +1,6 @@
 
 module "custom-roles" {
-  for_each = var.permissions
+  for_each = local.permissions
 
   source      = "./modules/iam_roles"
   project_id  = var.project_id

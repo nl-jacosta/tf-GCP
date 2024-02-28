@@ -1,4 +1,4 @@
-permissions = {
-  "devInfra" = ["iam.permission1", "iam.permission2"],
-  "qa"       = ["iam.permission1", "iam.permission2"]
-}
+# permissions = {
+#   "devInfra" = file("./modules/iam_roles/roles/devInfra"),
+#   "qa"       = ["iam.permission1", "iam.permission2"]
+# }

@@ -6,7 +6,7 @@ provider "google" {
 ### BACKEDN CONFIG FOR REMOTE TFSTATE (To be configured)
 terraform {
   backend "gcs" {
-    bucket = "ubs-tfstate"
+    bucket = "j7ap-tfstate"
 
   }
 }

@@ -12,3 +12,8 @@ variable "team" {
   type        = string
   description = "Team's name that will use this role in module"
 }
+
+variable "domain" {
+  type        = string
+  description = "Domain for user groups"
+}
